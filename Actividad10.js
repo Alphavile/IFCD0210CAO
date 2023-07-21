@@ -1,6 +1,3 @@
-var compra = parseInt (prompt ("Escribe el importe de la compra"));
-var mes = (prompt ("Introduce el mes"));
-var descuento;
 
 // if (mes == "octubre"){
 //     let total = 0;
@@ -31,6 +28,9 @@ var descuento;
 //     default:
 //     document.write(  " No hay descuento " + compra)   
 // }
+var compra = parseInt (prompt ("Escribe el importe de la compra"));
+var mes = (prompt ("Introduce el mes"));
+var descuento;
 
 switch (mes){
     case "octubre":

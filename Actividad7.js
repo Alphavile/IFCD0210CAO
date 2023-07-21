@@ -75,3 +75,94 @@ alert("Su clave es incorrecta. Inténtelo de nuevo ") + prompt ("Introduce una c
     }
 }}
 }
+function actividad9(){
+let tabla = parseInt(prompt( " Escoge que tabla de multiplicar quieres ver? "));
+alert (" ¿Quieres ver la tabla del? " + tabla);
+document.write(" La tabla del " + tabla + "<br/>");
+for (var n=0; n<=10; n++){
+    document.write( n + " x "+ tabla + " = " + (n*tabla) + "<br/>");
+}
+
+for (var i=0; i<=10; i++){
+    document.write(" La tabla del " + i + "<br/>");  
+    for (var n=0; n<=10; n++){
+    document.write( n + " x "+ i + " = " + (n*i) + "<br/>");
+}}
+
+for (var i=0; i<=tabla; i++){
+    document.write(" La tabla del " + i + "<br/>");  
+    for (var n=0; n<=10; n++){
+    document.write( n + " x "+ i + " = " + (n*i) + "<br/>");
+}}
+}
+
+function actividad10(){
+    var compra = parseInt (prompt ("Escribe el importe de la compra"));
+var mes = (prompt ("Introduce el mes"));
+var descuento;
+
+    switch (mes){
+        case "octubre":
+            descuento = compra * 0.15;
+            document.write(  " El descuento es " + descuento + "€" + "<br/>") 
+            document.write(  " El precio es " + (compra - descuento) + "€")
+            break;
+        case "enero":
+            descuento = compra * 0.20;
+            document.write(  " El descuento es " + descuento + "€" + "<br/>")
+            document.write(  " El precio es " + (compra - descuento) + "€")
+            break;
+        case "febrero":
+            descuento = compra * 0.20;
+            document.write(  " El descuento es " + descuento + "<br/>")
+            document.write(  " El precio es " + (compra - descuento))
+            break;
+        case "julio":
+            descuento = compra * 0.15;
+            document.write(  " El descuento es " + descuento + "<br/>")
+            document.write(  " El precio es " + (compra - descuento))
+            break;
+        case "agosto":
+            descuento = compra * 0.15;
+             document.write(  " El descuento es " + descuento + "<br/>")
+             document.write(  " El precio es " + (compra - descuento))
+            break;
+        case "noviembre":
+            descuento = compra * 0.25;
+            document.write(  " El descuento es " + descuento + "<br/>")
+            document.write(  " El precio es " + (compra - descuento))
+            break;
+        case "diciembre":
+            descuento = compra * 0.25;
+            document.write(  " El descuento es " + descuento + "<br/>")
+            document.write(  " El precio es " + (compra - descuento))
+            break;
+        default:
+            document.write(  " No hay descuento " + compra)   
+        }
+}
+
+
+var usuario = prompt("Introduce tu nombre de usuario");
+usuario = usuario.toLowerCase();
+if (usuario == "admin"){  
+    var contraseña = prompt("Introduce tu contraseña");
+contraseña = contraseña.toLowerCase();
+if (contraseña == "webmaster"){
+    alert ("bienvenido");
+}
+else if (contraseña === "" || contraseña === null){
+    alert ("cancelado");
+}
+else {
+    alert ("incorrecto");
+} 
+}
+else if (usuario === "" || usuario === null){
+    alert ("cancelado");
+    contraseña = prompt("Introduce tu usuario");
+}
+else {
+    alert ("incorrecto");
+    contraseña = prompt("Introduce tu usuario");
+}
