@@ -142,7 +142,7 @@ var descuento;
         }
 }
 
-
+function actividad11(){
 var usuario = prompt("Introduce tu nombre de usuario");
 usuario = usuario.toLowerCase();
 if (usuario == "admin"){  
@@ -165,4 +165,5 @@ else if (usuario === "" || usuario === null){
 else {
     alert ("incorrecto");
     contraseña = prompt("Introduce tu usuario");
+}
 }

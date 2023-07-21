@@ -110,3 +110,29 @@ function actividad10(){
         }
 }
 
+function actividad11(){
+    var usuario = prompt("Introduce tu nombre de usuario");
+    usuario = usuario.toLowerCase();
+    if (usuario == "admin"){  
+        var contraseña = prompt("Introduce tu contraseña");
+    contraseña = contraseña.toLowerCase();
+    if (contraseña == "webmaster"){
+        document.getElementById("total4").innerHTML = " Bienvenido ";
+    }
+    else if (contraseña === "" || contraseña === null){
+        document.getElementById("total4").innerHTML = " Cancelado ";
+    }
+    else {
+        document.getElementById("total4").innerHTML = " Incorrecto ";
+    } 
+    }
+    else if (usuario === "" || usuario === null){
+        document.getElementById("total4").innerHTML = " Cancelado ";
+   
+    }
+    else {
+        document.getElementById("total4").innerHTML = " Incorrecto ";
+   
+    }
+    }
+
