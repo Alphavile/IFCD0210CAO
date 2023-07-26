@@ -1,0 +1,89 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Colores Complementarios</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        #color-box-1 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #color-box-2 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Colores Complementarios</h1>
+    <div id="color-box-1"></div>
+    <div id="color-box-2"></div>
+    <button id="generate-button">Generar Colores</button>
+    <script>
+        // Función para generar un color hexadecimal aleatorio
+        function generarColor() {
+            var letras = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+         // Función para generar un color complementario
+        function generarColorComplementario(color) {
+            var r = parseInt(color.substr(1, 2), 16);
+            var g = parseInt(color.substr(3, 2), 16);
+            var b = parseInt(color.substr(5, 2), 16);
+             var complementarioR = 255 - r;
+            var complementarioG = 255 - g;
+            var complementarioB = 255 - b;
+             var complementarioColor = "#" + 
+                complementarioR.toString(16).padStart(2, '0') +
+                complementarioG.toString(16).padStart(2, '0') +
+                complementarioB.toString(16).padStart(2, '0');
+             return complementarioColor;
+        }
+         // Función para actualizar los colores en la página
+        function actualizarColores() {
+            var colorBox1 = document.getElementById("color-box-1");
+            var colorBox2 = document.getElementById("color-box-2");
+            var color1 = generarColor();
+            var color2 = generarColorComplementario(color1);
+            colorBox1.style.backgroundColor = color1;
+            colorBox2.style.backgroundColor = color2;
+            document.getElementById("color1").innerHTML = color1;
+            document.getElementById("color2").innerHTML = color2;
+        }
+         // Evento al hacer clic en el botón "Generar Colores"
+        var generateButton = document.getElementById("generate-button");
+        generateButton.addEventListener("click", actualizarColores);
+    </script>
+    <p>Color 1: <span id="color1"></span></p>
+    <p>Color 2: <span id="color2"></span></p>
+</body>
+</html>
