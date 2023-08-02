@@ -1,0 +1,2 @@
+typeof[]
+console.log(typeof)
