@@ -1,57 +1,70 @@
-function guardarAlmacenamientoLocal(llave, valor_a_guardar) {
-    localStorage.setItem(llave, JSON.stringify(valor_a_guardar))
-}
-function obtenerAlmacenamientoLocal(llave) {
-    const datos = JSON.parse(localStorage.getItem(llave))
-    return datos
+window.addEventListener('load', ()=>{
+    let inicio, curso, contacto, contenido;
+    inicio = document.querySelector("#inicio");
+    curso = document.querySelector("#curso");
+    contacto = document.querySelector("#contacto");
+    contenido = document.querySelector(".informacion");
+    
+    contenido.innerHTML=`
+    <img src="" alt="">
+    <h1>Entra en nuestra academia</h1>
+    <p>Crea tu itinerario formativo</p>
+    <button><a href="PPF1842_contacto.html">información</a></button>
+    `
+    inicio.addEventListener('click', function(){
+        contenido.innerHTML=`
+        <img src="" alt="">
+        <h1>Entra en nuestra academia</h1>
+        <p>Crea tu itinerario formativo</p>
+        <button><a href="PPF1842_contacto.html">información</a></button>
+        `
+    })
+    curso.addEventListener('click', function(){
+        contenido.innerHTML=`
+        <video controls src="media/VideoClase.mp4"></video>
+        <img src="" alt="">
+        `
+    })
+    contacto.addEventListener('click', function(){
+        contenido.innerHTML=`
+        <form action="">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <label for="correo">Correo electrónico</label>
+        <input type="text" id="correo">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto">
+        <label for="mensaje">Mensaje</label>
+        <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+        <input type="submit" value="enviar" id="enviar" onclick= "formulario()">
+        </form>
+        <p>Texto legal</p>
+        `
+    })
 
-}
-
-let alumnos = obtenerAlmacenamientoLocal('alumnos') || [];
-let mensaje = document.getElementById('mensaje')
-
-//Añadir un alumno
-const añadirAlumno = document.getElementById('nombre')
-const añadirApellido = document.getElementById('correo')
-const añadirEmail = document.getElementById('asunto')
-const añadirImagen = document.getElementById('mensaje')
-
-document.getElementById("enviar").addEventListener("click", function (event) {
-    event.preventDefault()
-    let alumnoAñadir = añadirAlumno.value
-    let apellidoAñadir = añadirApellido.value
-    let emailAñadir = añadirEmail.value
-    let imagenAñadir = añadirImagen.value
-
-    let van = true
-
-    if (alumnoAñadir == '' || apellidoAñadir == '' || emailAñadir == '' || imagenAñadir == '') {
-        mensaje.classList.add('llenarCampos')
-        setTimeout(() => { mensaje.classList.remove('llenarCampos') }, 5000)
-        van = false
-    }
-    else {
-        for (let i = 0; i < alumnos.length; i++) {
-            if (alumnos[i].nombre == alumnoAñadir) {
-                mensaje.classList.add('repetidoError')
-                setTimeout(() => { mensaje.classList.remove('repetidoError') }, 2500)
-                van = false
-            }
-        }
-    }
-
-    if (van == true) {
-        alumnos.push({
-            nombre: alumnoAñadir,
-           correo: apellidoAñadir,
-            asunto: emailAñadir,
-            mensaje: imagenAñadir
-        })
-        mensaje.classList.add('realizado')
-        setTimeout(() => {
-            mensaje.classList.remove('repetidoError')
-            window.location.reload()
-        }, 1500)
-    }
-    guardarAlmacenamientoLocal('alumnos', alumnos);
 })
+
+
+function saveAlocal(llave, vSave){
+localStorage.setItem(llave, JSON.stringify(vSave))
+}
+function gAlocal(llave){
+    const datos = JSON.parse(localStorage.getItem(llave));
+    return datos;
+}
+
+let alumnos = gAlocal('alumnos') || [];
+
+function formulario(){
+    var alumno={
+    nombres: document.querySelector("#nombre").value,
+    correo: document.querySelector("#correo").value,
+    asunto: document.querySelector("#asunto").value,
+    mensaje: document.querySelector("#mensaje").value
+    }
+
+    alumnos.push(alumno);
+    saveAlocal('alumnos', alumnos);
+}
+
+

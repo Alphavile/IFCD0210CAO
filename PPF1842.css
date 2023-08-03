@@ -25,15 +25,14 @@ header img{
     width: 10vw;
 }
 
-a{
+li{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
 }
-body{
-    /* height: 100vh; */
-}
+/* body{
+    height: 100vh;
+} */
 .principal{
     /* height: 70%; */
     /* background-color: aqua;  */
@@ -94,4 +93,11 @@ footer{
 .informacion form{
     display: flex;
     flex-direction: column;
+}
+li:hover{
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, 0.315);
+}
+a{
+    text-decoration: none;
 }
