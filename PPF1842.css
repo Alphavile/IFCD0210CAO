@@ -1,5 +1,5 @@
 header{
-    display: flex;
+display: flex;
 justify-content: space-between;
 flex-direction: row;
 padding-right: 80px; 
@@ -25,7 +25,10 @@ header img{
     width: 10vw;
 }
 
-header a{
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
 }
 body{
@@ -66,6 +69,10 @@ body{
 .informacion button{
     background-color: aqua;
 }
+.informacion video{
+    width: 620px;
+}
+
 .curso button{
     text-align: center;
     background-color: aqua;
@@ -77,4 +84,14 @@ margin: 0;
 button{
     width: 10em;
     height: 3em;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.informacion form{
+    display: flex;
+    flex-direction: column;
 }
