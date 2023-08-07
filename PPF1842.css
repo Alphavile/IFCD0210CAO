@@ -18,7 +18,8 @@ li{
     flex-direction: row;
     width: 5em;
     height: 2em;
-    background-color: aqua;
+    background-color: #00ffff;
+ 
     /* gap: 10px;   */
 }
 header img{
@@ -73,6 +74,10 @@ li{
 }
 
 .curso button{
+    text-align: center;
+    background-color: aqua;
+}
+header button{
     text-align: center;
     background-color: aqua;
 }

@@ -2,27 +2,32 @@
 <html lang="es">
 <head>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="jquery.js"></script>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="PPF1842.css">
+    <link rel="stylesheet" href="jquery.css">
 </head>
 <body>
 <header>
-    <img src="media/logo.jpg" alt="">
+    <img src="media/logo.png" alt="">
     <nav>
         <ul>
-            <li id="inicio">inicio</li>           
+            <a href="jquery.html"><li id="inicio">inicio</li></a>           
             <li id="curso">curso</li>
             <li id="contacto">contacto</li>
         </ul>
     </nav>
+    <div><button id="accesible">accesibilidad</button>
+    <button id="noche">noche</button></div>
 </header>
 <div class="principal">
 <div class="W30">
     <div class="curso">
         <h3>ACCEDER</h3>
-        <button>profesor</button>
+        <button id="profesor">profesor</button>
         <button>alumno</button>
     </div>
     <div class="curso">
@@ -35,13 +40,14 @@
     <img src="" alt="">
     <h1>Entra en nuestra academia</h1>
     <p>Crea tu itinerario formativo</p>
-    <button><a href="PPF1842_contacto.html">información</a></button>
+    <button id="info">información</button>
   </div>
 
 </div>  
-  <script src="PPF1842.js"></script> 
   <footer>
     <p>Todos los derechos reservados</p>
 </footer>
+<div id="modal_profesor"></div>
+<script src="jquery2.js"></script>
 </body>
 </html>
